@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exemplo Aula 4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            window.onload = ()=>  {
+                const form = document.getElementById('form');
+                form.reset();//FORÇAR A RESETAR O FORMULÁRIO
+                form.onsubmit = function(e) {
+                
+                    e.preventDefault();
+                    const select = this.prod;//this é o form
+                    //Elementos selecionados
+                    let produtos =  Array.from(select.selectedOptions);
+                    console.log(produtos);
+                    let body = document.querySelector('body');
+
+                    let resultado = "<h1>Dados da Compra</h1>";
+                    resultado += "<h3>Produtos Selecionados</h3><ul>";
+
+                    produtos.forEach((item)=>{
+                        resultado += `<li>${item.value}</li>`;
+                    });
+
+                    body.innerHTML = resultado + "</ul>";
+
+                    //let inputs = form.elements;//todos
+                    let pag ='';
+                    let inputs = this.pag;
+                    console.log(this.pag);
+                    for (let i = 0; i < inputs.length; i++) {
+                        if (inputs[i].checked === true) {
+                            let pag = inputs[i].value;
+                        }
+                    }
+                    body.innerHTML += `<h4>Pagar com:</h4> ${(pag)?pag:"não informado"}`;
+                    //Pegar um elemento do Formulário pelo name
+                    //"end" é o name do textarea
+                    body.innerHTML += `<h4>Entrega:</h4>${form.end.value}`;
+
+                    body.innerHTML += "<h4>Solicitações Extras:</h4>";
+                    console.log(this.item);
+                    console.log(this.item[0]);
+                    const checklist = this.item;
+                    let lista = "<ul>";
+                    for (let i = 0; i < checklist.length; i++) {
+                        if (checklist[i].checked === true)
+                            lista += `<li>${checklist[i].value}</li>`;
+                    }
+                    lista += "</ul>";
+
+                    body.innerHTML += lista;
+
+
+                    //CRIA O BOTÃO PARA CANCELAMENTO
+                    let cancela = document.createElement('button');
+                    cancela.append(document.createTextNode('Voltar'));
+                    body.appendChild(cancela);
+                    cancela.addEventListener('click', function () {
+                        if (confirm('CANCELAR e Voltar para opções de compra?')) {
+                            alert('COMPRA CANCELADA!!')
+                            console.log(window.location);
+                            window.location.reload();
+                        }
+                    });
+
+                    let confirma = document.createElement('button');
+                    confirma.append(document.createTextNode('Confirmar'));
+                    body.appendChild(confirma);
+                    confirma.addEventListener('click', function () {
+                        if (confirm('Você REALEMNTE quer CONFIRMAR??')) {
+    //                        alert('PARABÉNS !!COMPRA FINALIZADA!!')
+                            //console.log(window.location);
+                            // window.location.reload();
+                            //body.setAttribute('style','text-align:center');
+                            body.style.textAlign = 'center';
+                            body.innerHTML = '<h1>PARABÉNS !!<br>COMPRA FINALIZADA!!</h1>';
+                            let voltar = document.createElement('button');
+                            voltar.innerHTML = 'Voltar';
+                            voltar.addEventListener('click', function () {
+                                    window.location.reload();
+                            }, false);
+                            body.appendChild(voltar);
+                        }
+                    });
+
+            }
+        };
+        </script>
+        <style>
+            body{
+                margin: 0 auto;
+                width: 60%;
+            }
+            ul {list-style: none}
+            li::after {content: "  \2714"; color: green}
+        </style>
+    </head>
+    <body>
+
+        <h1>Selecione os Produtos</h1>
+        <form id='form' >
+            <select id="prod" name="prod" multiple>
+                <option>NOTEBOOK</option>
+                <option>SMARTPHONE</option>
+                <option>SMARTTV</option>
+                <option>TABLET</option>
+                <option>PC DESKTOP</option>
+            </select>
+
+            <h4>Forma de Pagamento</h4>
+            <input type="radio" name="pag" value="Boleto">Boleto
+            <br><input type="radio" name="pag" value="Débito">Débito
+            <br><input type="radio" name="pag" value="1x Crédito">1x Crédito
+            <br><input type="radio" name="pag" value="2x Crédito">2x Crédito
+            <br><input type="radio" name="pag" value="3x Crédito">3x Crédito
+            <br><input type="radio" name="pag" value="4x Crédito">4x Crédito
+
+            <h4>Solicitações Extras</h4>
+            <br><input type="checkbox" name="item" value="Nota Online">Nota Online
+            <br><input type="checkbox" name="item" value="Garantia Extendida">Garantia Extendida
+            <br><input type="checkbox" name="item" value="Entrega Rápida">Entrega Rápida
+
+
+            <h4>Endereço de Entrega</h4>
+            <br><textarea name='end'>Informe o Endereço</textarea>
+
+            <br><input type="submit" value='Comprar'/>
+        </form>
+        <div id="resultado"></div>
+    </body>
+</html>
