@@ -40,10 +40,14 @@
 
                 let pagar = this.pag.value;
                 console.log(pagar);
-                if (pagar !== '')
-                    pagar = pagar;
-                else
-                    pagar = 'não informado';
+
+                // if (pagar !== '')
+                //     string = pagar;
+                // else
+                //     string = 'não informado';
+                //EQUIVALENTE AO OPERADOR TERNÁRIO (TESTE)?VERDADE:FALSO;
+
+
                 body.innerHTML += `<h4>Pagar com:</h4> 
                     ${(pagar!=='')?pagar:"não informado"}`;
                 //Pegar um elemento do Formulário pelo name
