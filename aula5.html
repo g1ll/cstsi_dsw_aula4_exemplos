@@ -18,7 +18,7 @@
         }
         
         li::after {
-            content: "  \2714";
+            /*content: "  \2714";*/
             color: green
         }
     </style>
@@ -92,7 +92,24 @@
 
             listProds.push(objProd)
             console.table(listProds)
+            
+            mostraLista(listProds);
+
             this.reset();
+
+        }
+
+        function mostraLista(list){
+           let div = document.querySelector('#resultado');
+           let listHTML = '<ul>';
+           list.forEach(obj=>{
+               listHTML+= `<li>
+                    <hr> | Produtos: ${obj.listaOpcoes.join(' ')} 
+                    | Pagamento: ${obj.pagar}
+                    | Extras: ${obj.ext.join(' ')}<hr></li>`;
+           });
+           listHTML+='</ul>';
+           div.innerHTML = listHTML;
         }
     </script>
 </body>
