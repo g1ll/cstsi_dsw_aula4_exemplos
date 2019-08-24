@@ -104,9 +104,9 @@
            let lista = `<ul>`;
            list.forEach(obj=>{
             lista+= `<li>
-                    <hr> | Produtos: ${obj.listaOpcoes.join(' ')} 
-                    | Pagamento: ${obj.pagar}
-                    | Extras: ${obj.ext.join(' ')}<hr></li>`;
+                    <hr> | <b>Produtos:</b> ${obj.listaOpcoes.join(' ')} 
+                    | <b>Pagamento:</b> ${obj.pagar}
+                    | <b>Extras:</b> ${obj.ext.join(' ')}<hr></li>`;
            });
            lista+='</ul>';
            div.innerHTML = lista;
