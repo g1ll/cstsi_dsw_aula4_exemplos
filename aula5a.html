@@ -93,7 +93,7 @@
             listProds.push(objProd)
             console.table(listProds)
             
-            mostraLista(listProds);
+            mostraListaPorObjeto(listProds);
 
             this.reset();
 
@@ -109,6 +109,17 @@
                     | Extras: ${obj.ext.join(' ')}<hr></li>`;
            });
            lista+='</ul>';
+           div.innerHTML = lista;
+        }
+        
+        function mostraListaPorObjeto(list){
+           let div = document.querySelector('#resultado');
+           let lista = "<h3>Produtos</h3>";
+           list.forEach(obj=>{
+            lista+= `<ul><li>Produtos: <ul><li>${obj.listaOpcoes.join('</li><li>')}</li></ul></li> 
+                    <li>Pagamento: ${obj.pagar}</li>
+                    <li>Extras: <ul><li>${obj.ext.join('</li><li>')}</li></ul></li></ul><hr>`;
+           });
            div.innerHTML = lista;
         }
     </script>
