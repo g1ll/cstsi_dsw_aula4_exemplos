@@ -3,7 +3,6 @@ let pi = 3.14
     //let pi = 0.14 // Erro de redeclaração da variável pi
 console.log(pi)
 
-
 //escopo de bloco
 if (true) {
     let pi = 3.1415
