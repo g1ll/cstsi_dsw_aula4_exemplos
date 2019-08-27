@@ -106,7 +106,7 @@
                 lista+= `<li>
                     <hr> | <b>Produtos:</b> ${obj.listaOpcoes.join(' ')} 
                     | <b>Pagamento:</b> ${obj.pagar}
-                    | <b>Extras:</b> ${obj.ext.join(' ')}<hr></li>`;
+                    | <b>Extras:</b><br> ${obj.ext.join('<br>')}<hr></li>`;
            });
            lista+='</ul>';
            div.innerHTML = lista;
