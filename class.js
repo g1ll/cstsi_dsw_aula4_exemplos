@@ -15,6 +15,8 @@ class Pessoa {
 const fulano = new Pessoa('Fulano', 1.7, 80)
 const beltrano = new Pessoa('Beltrano', 1.8, 90)
 
+console.log({ fulano })
+
 console.table([fulano, beltrano])
 
 console.log(`O IMC do ${fulano.nome} é ${fulano.imc().toFixed(2)}`)
