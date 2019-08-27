@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Exemplo JS API DOM EVENTOS JS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script type="text/javascript">
+        const COR_ORIGINAL = 'red'
+        document.body.style.color = COR_ORIGINAL
+
+        let conteudo = 'TESTANDO API DOM'
+        document.body.innerHTML = conteudo
+
+        const div = document.createElement('div')
+        let divTexto = document.createTextNode(conteudo)
+        div.appendChild(divTexto)
+        document.body.appendChild(div)
+
+        div.addEventListener('mouseover', deixaAzul)
+
+        //volta cor original 
+        div.addEventListener('mouseleave', function() {
+            //usando função anônima
+            this.style.color = COR_ORIGINAL
+        });
+
+        function deixaAzul() {
+            this.style.color = 'blue'
+        }
+    </script>
+</body>
+
+</html>
