@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trabalho 1 Etapa</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font: 12px aria, verdana, sans-serif
+        }
+        
+        table,
+        tr {
+            border: solid 1px grey;
+            text-align: center;
+            padding: 0;
+            border-collapse: collapse
+        }
+        
+        table {
+            width: 95%;
+            margin: 0 auto
+        }
+        
+        td {
+            border: dotted 1px #000;
+            margin: 0;
+            padding: 0;
+            min-width: 4%
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+        
+        th {
+            background-color: #000;
+            color: #fff;
+            border: solid 2px #fff
+        }
+        
+        .row {
+            margin: 0 auto;
+            width: 95%;
+            overflow: auto;
+            padding: 2%
+        }
+        
+        .col1 {
+            width: 20%;
+            float: left;
+            background-color: #f2f2f2;
+            text-align: center;
+            border-radius: 10px;
+            padding: 1%;
+            box-sizing: border-box
+        }
+        
+        .col2 {
+            width: 75%;
+            float: left;
+            margin-left: 10px;
+            border: solid 2px gray;
+            box-sizing: border-box;
+            border-radius: 10px;
+            padding: 10px
+        }
+        
+        input[type=number],
+        input[type=text] {
+            width: 95%
+        }
+        
+        input[type=submit] {
+            width: 40%
+        }
+        
+        textarea {
+            width: 95%;
+            resize: none
+        }
+        
+        select {
+            width: 95%
+        }
+        
+        button {
+            font: 24px sans-serif;
+            width: 40px;
+            height: 40px;
+            padding: 0
+        }
+        
+        ul {
+            text-align: left
+        }
+        
+        h3 {
+            text-align: center
+        }
+        
+        form ul {
+            list-style: none
+        }
+    </style>
+</head>
+
+<body>
+    <div class="row">
+        <div class="col1">
+            <h3>Cadastro de Produtos</h3>
+            <form name="cadastro">
+                <br>Nome:<input type="text" name="nome" required>
+                <br>Descrição:<br><textarea rows="5" cols="30" name="desc" draggable="false"></textarea>
+                <br>Quantidade em Estoque:<input type="number" name="qtd">
+                <br>Preço:<input type="number" name="preco" step="0.01">
+                <br>Origem
+                <ul>
+                    <li><input type="radio" name="ori" value="Nacional">Nacional</li>
+                    <li><input type="radio" name="ori" value="Importado">Importado</li>
+                </ul>
+                <br>Descontos:
+                <br><select multiple size="7" name="desco">
+                        <option>10% a vista no Débito</option>
+                        <option>20% a vista no Boleto</option>
+                        <option>Brinde para pagamento a vista</option>
+                        <option>Até 3x sem juros no crédito</option>
+                        <option>Até 4x sem juros no crédito</option>
+                        <option>Até 5x sem juros no crédito</option>
+                        <option>Até 6x sem juros no crédito</option>
+                    </select>
+                <br>Itens Adicionais:
+                <ul>
+                    <li><input type="checkbox" name="itens" value="Grantia Extendida">Garantia Extendida.</li>
+                    <li><input type="checkbox" name="itens" value="Entrega Rápida">Entrega Rápida.</li>
+                    <li><input type="checkbox" name="itens" value="Retirada em lojas">Retirada em lojas.</li>
+                </ul>
+                <br><input type="submit" name='submit' value="Cadastrar">
+            </form>
+        </div>
+        <div class="col2">
+            <h3>Produtos Cadastrados</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Descrição</th>
+                        <th>Qtd Estoque</th>
+                        <th>Preço</th>
+                        <th>Origem</th>
+                        <th>Descontos</th>
+                        <th>Itens Adicionais</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="scripte_s6.js"></script>
+</body>
+
+</html>
