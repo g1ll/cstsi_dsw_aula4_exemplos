@@ -33,6 +33,7 @@
          listProds.find((prod, i) => {
              if (prod.id === prodIdedit) {
                  listProds[i] = produto;
+                 return true
              };
          });
          prodIdedit = 0;
@@ -53,7 +54,7 @@
  }
 
  function editProd(idpro) {
-     const prod = listProds.find((prod, index) => prod.id === idpro);
+     const prod = listProds.find((prod) => prod.id === idpro);
      if (prod) {
          const cadastro = document.cadastro
          cadastro.nome.value = prod.nome
