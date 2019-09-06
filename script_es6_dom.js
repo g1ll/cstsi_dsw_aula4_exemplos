@@ -10,12 +10,14 @@
      e.preventDefault();
      const submit = document.querySelector('input[type="submit"]')
      const titulo = document.querySelectorAll('h3')[0]
+
      const selectdesco = this.desco.selectedOptions;
 
      const listItens = []
      Array.from(this.itens).forEach((item) => {
          if (item.checked) listItens.push(item)
      });
+
 
      const produto = {
          id: (!prodIdedit) ? ++prodId : prodIdedit,
