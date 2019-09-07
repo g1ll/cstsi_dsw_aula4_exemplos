@@ -86,6 +86,7 @@
      }
  }
 
+ //funções para manipular o DOM
  function addToTable(produto) {
      if (produto) {
          const table = document.querySelector('tbody')

@@ -23,8 +23,8 @@
          qtd: this.qtd.value,
          preco: this.preco.value,
          origem: this.ori.value,
-         itens: (listItens.length) ? listItens : ['Sem Itens'],
-         desco: (selectdesco.length) ? selectdesco : ['Sem Descontos']
+         desco: (selectdesco.length) ? selectdesco : ['Sem Descontos'],
+         itens: (listItens.length) ? listItens : ['Sem Itens']
      }
 
      if (!prodIdedit) { //Cadastrar
