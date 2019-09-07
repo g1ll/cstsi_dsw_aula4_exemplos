@@ -32,7 +32,7 @@
 
      if (!prodIdedit) { //Cadastrar
          listProds.push(produto)
-         addTable(produto)
+         addToTable(produto)
      } else { //Salvar
          listProds.find((prod, i) => {
              if (prod.id === prodIdedit) {
@@ -41,7 +41,7 @@
                  return true
              };
          });
-         editTable(produto)
+         editFromTable(produto)
          this.setAttribute('style', '')
          titulo.setAttribute('style', '')
      }
@@ -55,7 +55,7 @@
      if (confirm('Você excluirá este item definitivamente!')) {
          let idpro = parseInt(this.getAttribute('idpro'));
          listProds.splice(listProds.findIndex(prod =>prod.id === idpro), 1);
-         removeTable(idpro);
+         removeFromTable(idpro);
      }
  }
 
