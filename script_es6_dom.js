@@ -131,9 +131,7 @@
 
          listTds.push(td)
 
-         listTds.forEach((td, key) => {
-             tr.appendChild(td)
-         })
+         listTds.forEach(td => tr.appendChild(td))
 
          table.appendChild(tr)
      }
