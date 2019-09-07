@@ -45,8 +45,9 @@
          this.setAttribute('style', '')
          titulo.setAttribute('style', '')
      }
-     titulo.innerHTML = 'Cadastrar Produto'
-     submit.value = 'Cadastrar'
+     let novoTexto = document.createTextNode('Cadastrar Produto');
+     titulo.replaceChild(novoTexto, titulo.lastChild)
+     submit.setAttribute('value', 'Cadastrar');
      this.reset()
  }
 
@@ -63,6 +64,7 @@
  }
 
  function editProd() {
+     console.log(this.lastChild);
      const idpro = Number(this.getAttribute('idpro'));
      const prod = listProds.find((prod, index) => {
          if (prod.id === idpro) {
@@ -78,7 +80,8 @@
          if (prod.origem)
              cadastro.ori[(prod.origem === 'Nacional') ? 0 : 1].checked = true
          const titulo = document.querySelectorAll('h3')[0]
-         titulo.innerHTML = 'Editar Produto'
+         let novoTexto = document.createTextNode('Editar Produto')
+         titulo.replaceChild(novoTexto, titulo.lastChild)
          titulo.setAttribute('style', 'color:red')
          cadastro.submit.value = 'Salvar'
          prodIdedit = prod.id
@@ -87,7 +90,7 @@
      }
  }
 
- function addTable(produto) {
+ function addToTable(produto) {
      if (produto) {
          const table = document.querySelector('tbody')
          const tr = document.createElement('tr')
@@ -114,13 +117,13 @@
          }
 
          const remove = document.createElement('button')
-         remove.innerHTML = '&#128465;' //&#10000
+         remove.appendChild(document.createTextNode('\uD83D\uDDD1')) //&#10000
          remove.setAttribute('idpro', '' + produto.id)
          remove.setAttribute('title', 'Remover este item.')
          remove.addEventListener('click', removeProd)
 
          const edit = document.createElement('button')
-         edit.innerHTML = '&#10000;'
+         edit.appendChild(document.createTextNode('\u270E'))
          edit.setAttribute('idpro', '' + produto.id)
          edit.setAttribute('title', 'Editar este item.')
          edit.addEventListener('click', editProd)
@@ -137,12 +140,12 @@
      }
  }
 
- function removeTable(id) {
+ function removeFromTable(id) {
      var table = document.querySelector('tbody')
      table.removeChild(document.getElementById(id))
  }
 
- function editTable(produto) {
+ function editFromTable(produto) {
      if (produto) {
          const tr = document.getElementById(produto.id)
          const tdAcoes = tr.childNodes[tr.childElementCount - 1]
@@ -159,7 +162,7 @@
                  });
                  td.appendChild(ul)
              } else {
-                 td.innerHTML = prod
+                 td.appendChild(document.createTextNode(prod))
              }
              tr.appendChild(td)
          }
