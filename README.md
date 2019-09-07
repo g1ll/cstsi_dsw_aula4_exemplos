@@ -9,7 +9,7 @@
 
 [Exemplo da Atividade](https://g1ll.github.io/cstsi_dsw_aula4_exemplos/trabalho.html "Exemplo da Atividade")
 
-### Correçes do Trabalho de JS
+### Correções do Trabalho de JS
 [Correção](https://g1ll.github.io/cstsi_dsw_aula4_exemplos/atividade_aula4_es6.html "Correção")
 
 [Correção com API DOM](https://g1ll.github.io/cstsi_dsw_aula4_exemplos/atividade_aula4_es6_dom.html "Correção com API DOM")
