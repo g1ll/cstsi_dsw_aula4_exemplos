@@ -80,8 +80,8 @@
         linhas += '<tr>';
         for ([key, prod] of Object.entries(produto))
             linhas += `<td>${(Array.isArray(prod))?
-                        `<ul><li>${prod.join('</li><li>')}</li><ul>` 
-                        :prod}</td>`;
+                            `<ul><li>${prod.join('</li><li>')}</li><ul>` 
+                            :prod}</td>`;
         linhas += `<td><button title='Remover este item.' 
                             onclick='removeProd(${produto.id})'>
                         &#128465</button>
