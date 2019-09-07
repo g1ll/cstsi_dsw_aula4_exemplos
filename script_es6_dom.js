@@ -114,7 +114,7 @@
          }
 
          const remove = document.createElement('button')
-         remove.appendChild(document.createTextNode('\uD83D\uDDD1')) //&#10000
+         remove.appendChild(document.createTextNode('\uD83D\uDDD1'))
          remove.setAttribute('idpro', '' + produto.id)
          remove.setAttribute('title', 'Remover este item.')
          remove.addEventListener('click', removeProd)
