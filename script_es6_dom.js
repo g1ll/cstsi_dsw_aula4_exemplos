@@ -1,4 +1,6 @@
- window.onload = () => document.cadastro.addEventListener('submit', processaCadastro);
+ window.onload = function(){
+      document.cadastro.addEventListener('submit', processaCadastro);
+ }
 
  const listProds = []
  let prodId = 0
